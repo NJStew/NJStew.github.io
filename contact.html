@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Contact</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ad589b60a.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <ul class="nav">
+      <li><a href="index.html" class="nav btn">Work</a></li>
+      <li class="sep"><a href="info.html" class="nav btn">Info</a></li>
+      <li><a href="contact.html" class="nav btn">Contact</a></li>
+    </ul>
+    
+    <div class="contactSection show">
+      <div class="callTo">
+        <h1>Contact</h1>
+        <p>This is your Contact section paragraph. Encourage your reader to reach out with any questions, comments or to take a different action specific to your site. You can also click on the contact form to customize the fields.</p>
+      </div>
+
+      <div class="formSection">
+        <h2 class="chat">Let's Chat</h2>
+        <h4>Email</h4>
+        <h5>contact@hannahhuberphotos.com</h5>
+
+        <form id="fcf-form" class="fcf-form-class" action="https://formspree.io/f/myyolwwv" method="POST">
+          <div class="fcf-form-group">
+            <div class="fcf-input-group">
+              <input type="text" id="Name" name="Name" class="fcf-form-control" placeholder="Your name" required>
+            </div>  
+          </div>
+  
+          <div class="fcf-form-group">
+            <div class="fcf-input-group">
+              <input type="email" id="Email" name="Email" class="fcf-form-control" placeholder="Your email" required>
+            </div>
+          </div>
+  
+          <div class="fcf-form-group">
+            <div class="fcf-input-group">
+              <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" placeholder="Your message" required></textarea>
+            </div>
+          </div>
+  
+          <div class="fcf-form-group">
+            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let current_url = document.location;
+      
+      document.querySelectorAll(".nav .btn").forEach(function(e){
+        if(e.href == current_url){
+          e.classList += " current";
+        } 
+        else {
+          e.classList = "nav btn";
+        }
+      });
+    </script>
+  </body>
+</html>

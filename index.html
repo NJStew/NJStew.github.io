@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>Work</title>
+  	<link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7ad589b60a.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+  </head>
+
+  <body>
+    <ul class="nav">
+      <li><a href="index.html" class="nav btn">Work</a></li>
+      <li class="sep"><a href="info.html" class="nav btn">Info</a></li>
+      <li><a href="contact.html" class="nav btn">Contact</a></li>
+    </ul>
+
+    <div class="container">
+      <div class="heading show">
+        <a href="https://www.instagram.com/hannahhuberphotos/?hl=en" target="_blank">
+          <h3>Hannah Huber <i class="fa-brands fa-instagram"></i></h3>
+        </a>
+      </div>
+
+      <div class="box">
+        <div class="imgCol">
+          <img class="show" src="./photos/photo1.jpg">
+          <img class="hideme" src="./photos/photo8.jpg">
+          <img class="hideme" src="./photos/photo5.jpg">
+          <img class="hideme" src="./photos/photo4.jpg">
+        </div>
+
+        <div class="imgCol">
+          <img class="show" src="./photos/photo11.jpg">
+          <img class="hideme" src="./photos/photo7.jpg">
+          <img class="hideme" src="./photos/photo2.jpg">
+          <img class="hideme" src="./photos/photo10.jpg">      
+        </div>
+
+        <div class="imgCol">
+          <img class="show" src="./photos/photo9.jpg">
+          <img class="hideme" src="./photos/photo6.jpg">
+          <img class="hideme" src="./photos/photo3.jpg">  
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let current_url = document.location;
+      
+      document.querySelectorAll(".nav .btn").forEach(function(e){
+        if(e.href == current_url){
+          e.classList += " current";
+        } 
+        else {
+          e.classList = "nav btn";
+        }
+      });
+    </script>
+
+    <script>
+      $(document).ready(function() {
+        $(window).scroll( function(){
+          $('.hideme').each( function(i){
+            var bottom_of_object = $(this).position().top + $(this).outerHeight();
+            var bottom_of_window = $(window).scrollTop() + $(window).height();
+
+            if( bottom_of_window > bottom_of_object / 1.2 ){
+              this.classList = "show";
+            }  
+          }); 
+        });
+      });
+    </script>
+  </body>
+</html>

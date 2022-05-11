@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Info</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <ul class="nav">
+      <li><a href="index.html" class="nav btn">Work</a></li>
+      <li class="sep"><a href="info.html" class="nav btn">Info</a></li>
+      <li><a href="contact.html" class="nav btn">Contact</a></li>
+    </ul>
+    
+    <div class="about show">
+      <div class = "textBox">
+        <h3 class="name">Hannah Huber</h3>
+        <h4 class="title">Is a photographer based in Madison, Wisconsin</h4>
+        <p class="description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.​</p>
+      </div>
+
+      <div class="profileBox">
+        <img src="./photos/hannahProfile.png" alt="">
+      </div>
+    </div>
+
+    <script>
+      let current_url = document.location;
+      
+      document.querySelectorAll(".nav .btn").forEach(function(e){
+        if(e.href == current_url){
+          e.classList += " current";
+        } 
+        else {
+          e.classList = "nav btn";
+        }
+      });
+    </script>
+  </body>
+</html>
