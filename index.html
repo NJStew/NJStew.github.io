@@ -2,21 +2,22 @@
 <html>
   <head>
   	<title>Hannah Huber - Work</title>
-    <link rel="shortcut icon" href="./photos/logo.png">
+    <link rel="shortcut icon" href="./photos/tab-logo.png">
   	<link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7ad589b60a.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/4b2217b840.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
   <body>
     <div class="logoWrapper">
-      <img class="logo" src="./photos/logo.png">
+      <a id="logo"><img class="logo" src="./photos/logo.png"></a>
     </div>
-    <ul class="nav">
+    <ul class="navWrapper">
       <li><a href="index.html" class="nav btn">Work</a></li>
       <li class="sep"><a href="info.html" class="nav btn">Info</a></li>
       <li><a href="contact.html" class="nav btn">Contact</a></li>
@@ -44,12 +45,12 @@
               Subversive
             </div>
           </div>
-          <!-- <div class="imgWrap">
-            <img class="show" src="./photos/albumCovers/photo7.jpg">
+          <div class="imgWrap">
+            <a id="Senior-Photos imgCount10" href="gallery.html" onclick="getGalleryName(this)"><img class="show" src="./photos/albumCovers/photo7.jpg"></a>
             <div class="imgTitle">
               Senior Photos
            </div>
-          </div> -->
+          </div>
         </div>
 
         <div class="galCol">
@@ -65,12 +66,12 @@
               Rules
             </div>
           </div>
-          <!-- <div class="imgWrap">
-            <img class="show" src="./photos/albumCovers/photo8.jpg">
+          <div class="imgWrap">
+            <a id="Graduation-Photos imgCount12" href="gallery.html" onclick="getGalleryName(this)"><img class="show" src="./photos/albumCovers/photo8.jpg"></a>
             <div class="imgTitle">
               Graduation Photos
             </div>
-          </div> -->
+          </div>
         </div>
 
         <div class="galCol">
@@ -86,20 +87,35 @@
               Power
             </div>
           </div>
-          <!-- <div class="imgWrap">
-            <img class="show" src="./photos/albumCovers/photo9.jpg">
+          <div class="imgWrap">
+            <a id="Runway-Shoots imgCount14" href="gallery.html" onclick="getGalleryName(this)"><img class="show" src="./photos/albumCovers/photo9.jpg"></a>
             <div class="imgTitle">
               Runway Shoots
             </div>
-          </div> -->
+          </div>
         </div>
       </div>
     </div>
 
     <script>
+      let clickCount = 0;
+      let logo = document.getElementById("logo");
+      logo.addEventListener("click", updateClickCount);
+
+      function updateClickCount() {
+        clickCount++;
+
+        if (clickCount >= 6) {
+          console.log(clickCount);
+          logo.href = "hidden.html";
+        }
+      }
+    </script>
+
+    <script>
       let current_url = document.location;
 
-      document.querySelectorAll(".nav .btn").forEach(function(e){
+      document.querySelectorAll(".nav.btn").forEach(function(e){
         if(e.href == current_url){
           e.classList += " current";
         } 
@@ -128,7 +144,10 @@
       function getGalleryName(image) {
         let galleryId = image.id.split(" ")[0];
         let imgCount = image.id.split(" ")[1].replace(/\D/g, "");
-        console.log(imgCount);
+
+        if (galleryId == 'undefined') 
+          galleryId = 7;
+
         localStorage.setItem("galleryId", galleryId);
         localStorage.setItem("imgCount", imgCount);
       }

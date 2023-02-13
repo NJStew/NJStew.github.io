@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Hannah Huber - Contact</title>
-    <link rel="shortcut icon" href="./photos/logo.png">
+    <link rel="shortcut icon" href="./photos/tab-logo.png">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/7ad589b60a.js" crossorigin="anonymous"></script>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
   <body>
     <div class="logoWrapper">
       <img class="logo" src="./photos/logo.png">
     </div>
-    <ul class="nav">
+    <ul class="navWrapper">
       <li><a href="index.html" class="nav btn">Work</a></li>
       <li class="sep"><a href="info.html" class="nav btn">Info</a></li>
       <li><a href="contact.html" class="nav btn">Contact</a></li>
@@ -53,7 +54,7 @@
           </div>
   
           <div class="fcf-form-group">
-            <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send Message</button>
+            <button type="submit" id="fcf-button" class="fcf-btn">Send Message</button>
           </div>
         </form>
       </div>
@@ -62,7 +63,7 @@
     <script>
       let current_url = document.location;
 
-      document.querySelectorAll(".nav .btn").forEach(function(e){
+      document.querySelectorAll(".nav.btn").forEach(function(e){
         if(e.href == current_url){
           e.classList += " current";
         } 

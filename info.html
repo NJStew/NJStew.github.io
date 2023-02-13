@@ -2,20 +2,21 @@
 <html>
   <head>
     <title>Hannah Huber - Info</title>
-    <link rel="shortcut icon" href="./photos/logo.png">
+    <link rel="shortcut icon" href="./photos/tab-logo.png">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
   </head>
 
   <body>
     <div class="logoWrapper">
       <img class="logo" src="./photos/logo.png">
     </div>
-    <ul class="nav">
+    <ul class="navWrapper">
       <li><a href="index.html" class="nav btn">Work</a></li>
       <li class="sep"><a href="info.html" class="nav btn">Info</a></li>
       <li><a href="contact.html" class="nav btn">Contact</a></li>
@@ -25,18 +26,56 @@
       <div class = "textBox">
         <h3 class="name">Hannah Huber</h3>
         <h4 class="title">Is a photographer based in Madison, Wisconsin</h4>
-        <p class="description">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.​</p>
+        <p class="description">Hello! I am a passionate photographer who loves capturing the beauty in everyday life. With an eye for detail and a love for capturing memories, I strive to create images that not only look great, but tell a story and evoke emotion.
+          I specialize in a range of photography styles, including portrait, and event photography. Whether it's capturing the joy on a couple's face on their wedding day or a just a new LinkedIn profile picture, I aim to create images that will be treasured for a lifetime.
+          <br><br>
+          I would love to work with you to create beautiful, timeless images that you can treasure for years to come. So if you're looking for a photographer who will go above and beyond to capture the special moments in your life, look no further. Contact me today to book a shoot!​</p>
       </div>
 
-      <div class="profileBox">
+      <!-- <div class="profileBox">
         <img src="./photos/hannahProfile.png" alt="">
-      </div>
+      </div> -->
     </div>
-
+    <h2 class="ratesHeader">Rates</h2>
+    <div class="rates show">
+      <div class="columns">
+        <ul class="price">
+          <li class="header">Basic</li>
+          <li class="grey">$</li>
+          <li>30 minutes</li>
+          <li>15-20 images</li>
+          <li>1 outfit</li>
+          <li>1 location</li>
+          <li>2 weeks delivery</li>
+        </ul>
+      </div>
+      <div class="columns">
+        <ul class="price">
+          <li class="header">Standard</li>
+          <li class="grey">$$</li>
+          <li>60 minutes</li>
+          <li>20-30 images</li>
+          <li>2 outfits</li>
+          <li>2-3 locations</li>
+          <li>2 weeks delivery</li>
+        </ul>
+      </div>
+        <div class="columns">
+          <ul class="price">
+            <li class="header">Premium</li>
+            <li class="grey">$$$</li>
+            <li>120 minutes</li>
+            <li>35-75 images</li>
+            <li>3-4 outfits</li>
+            <li>3-5 location</li>
+            <li>1 week delivery</li>
+          </ul>
+        </div>
+    </div>
     <script>
       let current_url = document.location;
 
-      document.querySelectorAll(".nav .btn").forEach(function(e){
+      document.querySelectorAll(".nav.btn").forEach(function(e){
         if(e.href == current_url){
           e.classList += " current";
         } 
